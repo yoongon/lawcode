@@ -1,2 +1,5 @@
 .idea/*
 *.iml
+draw/*
+.DS_Store
+
