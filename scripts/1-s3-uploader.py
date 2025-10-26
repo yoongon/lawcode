@@ -16,7 +16,13 @@ def run_cmd(cmd):
     return res.strip(), True
 
 
+def run_cmds(filename, formats):
+    for format in formats:
+        full_filename = '{}.{}'.format(filename, format)
+        cmd = 'aws s3 cp draw/{} s3://lawcode/{}-{}'.format(full_filename, full_filename, get_date())
+        # run_cmd(cmd)
+        print(cmd)
+
+
 if __name__ == '__main__':
-    filename = 'hello.file'
-    cmd = 'aws s3 cp draw/{} s3://lawcode/{}-{}'.format(filename, filename, get_date())
-    print(cmd)
+    run_cmds('', ['', ''])
